@@ -10,7 +10,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    erb :"/authors/index"
   end
+
 
 end
