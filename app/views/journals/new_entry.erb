@@ -8,8 +8,13 @@
             <h1>The Daily Journal</h1>
         </div>
         <div>
-            <h2>Sign Up</h2>
+            <h2>New Journal Entry</h2>
         </div>
-        <form method="POST" action="/
+        <form method="POST" action="/journals">
+            Title: <input type="text" name="title"><br />
+            Body: <input type="text" name="body"><br />
+            Date: <input type="text" name="date"><br/>
+            <input type="submit">
+        </form>
     </body>
 </html>

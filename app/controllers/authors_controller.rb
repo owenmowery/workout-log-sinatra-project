@@ -3,10 +3,6 @@ class AuthorsController < ApplicationController
         erb :"authors/signup"
     end
 
-    get '/login' do
-        erb :"authors/login"
-    end
-
     post '/authors' do
         @author = Author.new(params)
 

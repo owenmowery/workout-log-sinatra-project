@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_04_12_182931) do
     t.string "password_digest"
   end
 
-  create_table "journal_entries", force: :cascade do |t|
-    t.string "string"
+  create_table "journals", force: :cascade do |t|
+    t.string "title"
     t.string "body"
     t.datetime "date"
     t.integer "user_id"

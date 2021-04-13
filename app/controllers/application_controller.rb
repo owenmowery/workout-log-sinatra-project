@@ -13,5 +13,17 @@ class ApplicationController < Sinatra::Base
     erb :"/authors/index"
   end
 
+  helpers do
+
+    def logged_in?
+      session[:user_id]
+    end
+
+    def current_user
+      @author ||= Author.find_by(id: session[:user_id])
+    end
+    
+  end
+
 
 end
