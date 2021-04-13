@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
 
     post '/login' do
         #find user
-        @author = Author.find_by(username: params[:username])
+        @user = User.find_by(username: params[:username])
       
-        if @author && @author.authenticate(params[:password])
-            session[:user_id] = @author.id
+        if @user && @user.authenticate(params[:password])
+            session[:user_id] = @user.id
 
-            redirect "/journals"
+            redirect "/workouts"
         else
             redirect "/login"
         end

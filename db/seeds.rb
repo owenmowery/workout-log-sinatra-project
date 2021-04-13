@@ -1,0 +1,2 @@
+User.destroy_all
+Workout.destroy_all

@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :"/authors/index"
+    erb :"/users/index"
   end
 
   helpers do
@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      @author ||= Author.find_by(id: session[:user_id])
+      @user ||= User.find_by(id: session[:user_id])
     end
     
   end

@@ -6,6 +6,6 @@ end
 
 run ApplicationController
 
-use AuthorsController
-use JournalController
+use UserController
+use WorkoutLogController
 use SessionsController

@@ -12,16 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2021_04_12_182931) do
 
-  create_table "authors", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
     t.string "password_digest"
   end
 
-  create_table "journals", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
+  create_table "workouts", force: :cascade do |t|
     t.datetime "date"
+    t.string "workout_type"
+    t.string "description"
+    t.integer "cals_burned"
+    t.string "length"
     t.integer "user_id"
   end
 
