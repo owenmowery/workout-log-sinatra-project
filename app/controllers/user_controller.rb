@@ -5,7 +5,7 @@ class UserController < ApplicationController
 
     post '/signup' do
         @user = User.new(params)
-
+        @workouts = Workout.all
         if @user && @user.save
             #set session id
             session[:user_id] = @user.id

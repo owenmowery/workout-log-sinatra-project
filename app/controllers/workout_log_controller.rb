@@ -19,8 +19,7 @@ class WorkoutLogController < ApplicationController
 
     get "/workouts/:id" do
         if logged_in?
-            @workout = Workout.find_by_id(params[:id])
-            
+            @workout = Workout.find_by_id(params[:id])    
             erb :"workouts/show"
         end
     end
@@ -35,5 +34,12 @@ class WorkoutLogController < ApplicationController
             redirect "workouts/new"
         end
     end
+
+    post "/workouts/:id" do
+        @workout = Workout.find_by_id(params[:id])
+        @workout.destroy
+        redirect "/workouts"
+    end
+
 
 end

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+    
     </head>
     <body>
         <div>
-            <h1>Welcome to The Daily Workout Log, <%= @user.name %>!</h1>
+            <h1>Welcome to The Daily Workout Log!</h1>
             <h3>Log Daily Workouts<a href="/workouts/new"> New Workout Log </a></h3>
         </div>
-        <div>
-            <h2></h2>
-        </div>
+        <% @workouts.each do |workout| %>
+            <div>
+                <li><a href="/workouts/<%= workout.id %>" >Workout <%= workout.id %></a></li>
+                <li>Date: <%= workout.date %></li>
+                <li>Workout Type: <%= workout.workout_type %></li>
+                <li>Description: <%= workout.description %></li>
+            </div>
+        <% end %>
         
     </body>
 </html>
