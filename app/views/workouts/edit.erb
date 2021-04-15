@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <h1>EDIT THIS</h1>
+            </br>
+            <form method="POST" action="/workouts/<%= @workout.id %>/edit">
+            
+                <p>Date: <input type="text" name="date" value=" <%= @workout.date %>" ></p>
+                <p>Workout Type: <input type="text" name="workout_type" value=" <%= @workout.workout_type %>" ></p>
+                <p>Workout Length: <input type="text" name="length" value=" <%= @workout.length %>" ></p>
+                <p>Description: <input type="text" name="description" value=" <%= @workout.description %>" ></p>
+                <p>Calories Burned: <input type="text" name="cals_burned" value=" <%= @workout.cals_burned %>" ></p>
+
+                <input type="submit">
+
+            </form>
+            <h4><a href="/workouts">Homepage</a></h4></br>
+            
+            <h4>Delete this thought:</h4>
+            <form method="POST" action="/workouts/<%= @workout.id %>">
+                <input type="hidden" id="hidden" name="_method" value="DELETE">
+                <input type="submit" value="DELETE">
+            </form>
+        </body>    
+    </html>

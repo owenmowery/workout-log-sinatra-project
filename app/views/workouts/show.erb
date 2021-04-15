@@ -2,7 +2,7 @@
     <html>
         <body>
             <h1> Wow what a workout! </h1>
-            <h2>Today's workout was:</h2></br>
+            <h2>The workout was:</h2></br>
             <div class="show_workout">
                 <p>Date: <%= @workout.date %></p>
                 <p>Workout Type: <%= @workout.workout_type %></p>
@@ -12,10 +12,14 @@
             </div>
             <h4><a href="/workouts">Homepage</a></h4></br>
             
-            <h4>Delete this thought:</h4>
+            <h3>Delete this workout:</h3>
             <form method="POST" action="/workouts/<%= @workout.id %>">
                 <input type="hidden" id="hidden" name="_method" value="DELETE">
                 <input type="submit" value="DELETE">
             </form>
+            </br>
+
+            <h3><a href="/workouts/<%= @workout.id %>/edit">Edit this workout:</a></h3>
+            
         </body>    
     </html>
