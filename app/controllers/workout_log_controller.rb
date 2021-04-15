@@ -24,6 +24,22 @@ class WorkoutLogController < ApplicationController
         end
     end
 
+    patch "/thoughts/:id" do
+    
+
+        @workout = Thought.find_by_id(params[:id])
+        params.delete("_method")
+        @workout.update(params)
+     
+        if @workout.update(params) #Did We Make a Change?
+            redirect "/workouts/#{@workout.id}"
+        else
+            redirect "workouts/new"
+        end
+
+    end
+
+
     post "/workouts/new" do
         workout = Workout.new(params)
         workout.user_id = current_user.id 
@@ -36,9 +52,14 @@ class WorkoutLogController < ApplicationController
     end
 
     post "/workouts/:id" do
-        @workout = Workout.find_by_id(params[:id])
-        @workout.destroy
-        redirect "/workouts"
+        workout = Workout.find_by_id(params[:id])
+        if workout.user_id == current_user.id 
+            workout.destroy
+            redirect "/workouts"
+        else
+            redirect "/workouts"
+        end
+
     end
 
 
