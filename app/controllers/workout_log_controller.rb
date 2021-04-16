@@ -27,7 +27,7 @@ class WorkoutLogController < ApplicationController
     get "/workouts/:id/edit" do
         if logged_in?
             @workout = Workout.find_by_id(params[:id])
-            if @workout.user_id != logged_in? || @workout.user_id === nil
+            if @workout.user_id != logged_in? || @workout.user_id == nil
                 redirect "/workouts"
             else
                 erb :"workouts/edit"
@@ -58,7 +58,7 @@ class WorkoutLogController < ApplicationController
         end
     end
 
-    delete "/workouts/:id" do
+    post "/workouts/:id" do
         workout = Workout.find_by_id(params[:id])
         if workout.user_id == logged_in? 
             workout.destroy
