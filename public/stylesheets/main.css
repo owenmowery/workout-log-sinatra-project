@@ -19,6 +19,12 @@
     line-height: 18px;
   }
 
+  .wrapper a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+  } 
+
   .wrapper {
     background: #fff;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);

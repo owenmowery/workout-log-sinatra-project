@@ -3,6 +3,11 @@ class SessionsController < ApplicationController
         erb :'sessions/login'
     end
 
+    get '/logout' do
+        session.clear
+        redirect '/'
+    end
+
     post '/login' do
         #find user
         user = User.find_by(username: params[:username])
@@ -15,5 +20,6 @@ class SessionsController < ApplicationController
             redirect "/login"
         end
     end
+
 
 end
