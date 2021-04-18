@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.signup-form input {
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+}
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#95a5a6; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/stylesheets/home.css" />
+        <link rel="stylesheet" href="/stylesheets/index.css" />
     </head>
     <body>
         <div>
@@ -9,8 +9,8 @@
             <h3>Log Daily Workouts<a href="/workouts/new"> New Workout Log </a></h3>
         </div>
         <% @workouts.each do |workout| %>
-            <div>
-                <li><a href="/workouts/<%= workout.id %>" >Workout <%= workout.id %></a></li>
+            <div class="workout-index">
+                <a id="workout-link" href="/workouts/<%= workout.id %>" >Workout <%= workout.id %></a></li>
                 <li>Date: <%= workout.date %></li>
                 <li>Workout Type: <%= workout.workout_type %></li>
                 <li>Description: <%= workout.description %></li>
