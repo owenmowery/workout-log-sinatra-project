@@ -36,6 +36,16 @@
     width: 85%;
   }
 
+  #logout-btn {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100px;
+    border-radius: 4px;
+    padding: 6px;
+    display: inline-block;
+    margin-bottom: 50px;
+  }
+
   h1 {
     font-size: 36px;
     line-height: 54px;

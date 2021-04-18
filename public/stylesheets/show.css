@@ -1,0 +1,23 @@
+.show-btns {
+    background-color: #000000;
+    color: #ffffff;
+    width: 100px;
+    border-radius: 4px;
+    padding: 6px;
+    display: inline-block;
+    margin-bottom: 50px;
+}
+
+.show-btns a {
+    color: #ffffff;
+    padding: 5px;
+    text-align: center;
+}
+
+.show-btn:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#edit-btn {
+    text-align: center;
+}

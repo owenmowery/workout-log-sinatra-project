@@ -1,25 +1,28 @@
 <!DOCTYPE html>
     <html>
+        <head>
+        <link rel="stylesheet" href="/stylesheets/show.css" />
+        </head>
         <body>
             <h1> Wow what a workout! </h1>
             <h2>The workout was:</h2></br>
             <div class="show_workout">
-                <p>Date: <%= @workout.date %></p>
-                <p>Workout Type: <%= @workout.workout_type %></p>
-                <p>Workout Length: <%= @workout.length %></p>
-                <p>Description: <%= @workout.description %></p>
-                <p>Calories Burned: <%= @workout.cals_burned %></p>
+                <p><strong>Date:</strong> <%= @workout.date %></p>
+                <p><strong>Workout Type:</strong> <%= @workout.workout_type %></p>
+                <p><strong>Workout Length:</strong> <%= @workout.length %></p>
+                <p><strong>Description:</strong> <%= @workout.description %></p>
+                <p><strong>Calories Burned:</strong> <%= @workout.cals_burned %></p>
             </div>
-            <h4><a href="/workouts">Homepage</a></h4></br>
+            <h4 class="show-btns"><a href="/workouts">Homepage</a></h4></br>
             
             <h3>Delete this workout:</h3>
             <form method="POST" action="/workouts/<%= @workout.id %>">
                 <input type="hidden" id="hidden" name="_method" value="DELETE">
-                <input type="submit" value="DELETE">
+                <input class="show-btns" type="submit" value="DELETE">
             </form>
             </br>
 
-            <h3><a href="/workouts/<%= @workout.id %>/edit">Edit this workout:</a></h3>
+            <h3 class="show-btns" id="edit-btn"><a href="/workouts/<%= @workout.id %>/edit">Edit</a></h3>
             
         </body>    
     </html>
