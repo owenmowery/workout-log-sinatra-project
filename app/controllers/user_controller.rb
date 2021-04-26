@@ -12,7 +12,7 @@ class UserController < ApplicationController
             #redirect
             erb :"workouts/index"
         else
-            erb :"users/signup"
+            redirect "/signup"
         end
     end
 end

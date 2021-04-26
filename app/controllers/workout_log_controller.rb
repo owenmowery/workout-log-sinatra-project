@@ -5,7 +5,7 @@ class WorkoutLogController < ApplicationController
             @workouts = Workout.all
             erb :"workouts/index"
         else
-            redirect "/sessions/login"
+            redirect "/login"
         end
     end
 
@@ -13,16 +13,15 @@ class WorkoutLogController < ApplicationController
         if logged_in?
             erb :"workouts/new_entry"
         else
-            redirect "/sessions/login"
+            redirect "/login"
         end
     end
 
     get "/workouts/:id" do
-        if logged_in?
-            @workout = Workout.find_by_id(params[:id])    
+        if @workout = Workout.find_by_id(params[:id])    
             erb :"workouts/show"
         else
-            redirect "/sessions/login"
+            redirect "/workouts"
         end
     end
 
@@ -35,7 +34,7 @@ class WorkoutLogController < ApplicationController
                 erb :"workouts/edit"
             end
         else
-            redirect "/sessions/login"
+            redirect "/login"
         end 
     end
 

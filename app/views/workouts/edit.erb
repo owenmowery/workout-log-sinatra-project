@@ -16,7 +16,7 @@
             </form>
             <h4><a href="/workouts">Homepage</a></h4></br>
             
-            <h4>Delete this thought:</h4>
+            <h4>Delete this workout:</h4>
             <form method="POST" action="/workouts/<%= @workout.id %>">
                 <input type="hidden" id="hidden" name="_method" value="DELETE">
                 <input type="submit" value="DELETE">
