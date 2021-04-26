@@ -10,7 +10,7 @@ class UserController < ApplicationController
             #set session id
             session[:user_id] = @user.id
             #redirect
-            erb :"workouts/index"
+            redirect "/workouts"
         else
             redirect "/signup"
         end

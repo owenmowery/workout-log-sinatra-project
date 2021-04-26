@@ -17,6 +17,11 @@ class WorkoutLogController < ApplicationController
         end
     end
 
+    get "/workouts/mine" do
+        @workouts = current_user.workouts
+        erb :"workouts/index"
+    end
+
     get "/workouts/:id" do
         if @workout = Workout.find_by_id(params[:id])    
             erb :"workouts/show"
@@ -40,8 +45,10 @@ class WorkoutLogController < ApplicationController
 
     post "/workouts/:id/edit" do
         @workout = Workout.find_by_id(params[:id])
-        @workout.update(params)
-
+        if @workout == nil || @workout.user_id != session[:user_id] || @workout.user_id == nil
+            redirect "/workouts"
+        end
+    
         if @workout.update(params)
             redirect "/workouts/#{@workout.id}"
         else
