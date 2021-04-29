@@ -4,7 +4,7 @@
             <h1>EDIT THIS</h1>
             </br>
             <form method="POST" action="/workouts/<%= @workout.id %>/edit">
-            
+                <input type="hidden" id="hidden" name="_method" value="PATCH">
                 <p>Date: <input type="text" name="date" value=" <%= @workout.date %>" ></p>
                 <p>Workout Type: <input type="text" name="workout_type" value=" <%= @workout.workout_type %>" ></p>
                 <p>Workout Length: <input type="text" name="length" value=" <%= @workout.length %>" ></p>
