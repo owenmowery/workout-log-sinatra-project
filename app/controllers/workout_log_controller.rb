@@ -23,6 +23,9 @@ class WorkoutLogController < ApplicationController
     end
 
     get "/workouts/:id" do
+        if logged_in?
+            @user = current_user
+        end
         if @workout = Workout.find_by_id(params[:id])    
             erb :"workouts/show"
         else

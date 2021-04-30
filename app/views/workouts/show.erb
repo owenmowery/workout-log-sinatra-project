@@ -15,14 +15,15 @@
             </div>
             <h4 class="show-btns"><a href="/workouts">Homepage</a></h4></br>
             
-            <h3>Delete this workout:</h3>
-            <form method="POST" action="/workouts/<%= @workout.id %>">
-                <input type="hidden" id="hidden" name="_method" value="DELETE">
-                <input class="show-btns" type="submit" value="DELETE">
-            </form>
-            </br>
+            <% if @user.id == @workout.user_id %>
+                <h3>Delete this workout:</h3>
+                <form method="POST" action="/workouts/<%= @workout.id %>">
+                    <input type="hidden" id="hidden" name="_method" value="DELETE">
+                    <input class="show-btns" type="submit" value="DELETE">
+                </form>
+                </br>
 
-            <h3 class="show-btns" id="edit-btn"><a href="/workouts/<%= @workout.id %>/edit">Edit</a></h3>
-            
+                <h3 class="show-btns" id="edit-btn"><a href="/workouts/<%= @workout.id %>/edit">Edit</a></h3>
+            <% end %>
         </body>    
     </html>
